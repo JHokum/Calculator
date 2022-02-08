@@ -19,10 +19,22 @@ const appendContainerToTarget = function(container,target){
 }
 
 const calculatorContainer=function(){
-    const calculator = document.createElement("div")
-    calculator.classList.add("calculator")
-    calculator.textContent="Calculator div is here!"
+    const str = "calculator"
+    const calculator = createContainer(str)
+     appendContainerToTarget(numOneToNineContainer(),calculator)
     return calculator
 }
 
-appendContainerToTarget(calculatorContainer(),body)
+const numOneToNineContainer = function(){
+    const str = "OneToNine";
+    const OneToNine = createContainer(str)
+    return OneToNine
+}
+
+const createContainer = function(className){
+    const container = document.createElement("div")
+    container.classList.add(className)
+    return container
+}
+
+appendContainerToTarget(calculatorContainer(),body);
