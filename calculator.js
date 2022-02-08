@@ -11,3 +11,18 @@ function operate(operator, num1, num2){
         //case divide
 }
 
+//html population
+const body = document.querySelector("body")
+
+const appendContainerToTarget = function(container,target){
+    target.appendChild(container);
+}
+
+const calculatorContainer=function(){
+    const calculator = document.createElement("div")
+    calculator.classList.add("calculator")
+    calculator.textContent="Calculator div is here!"
+    return calculator
+}
+
+appendContainerToTarget(calculatorContainer(),body)
