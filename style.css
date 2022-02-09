@@ -17,6 +17,7 @@ button{
 .display{
     background-color: #EDD2F3;
     padding: 10px;
+    justify-content: flex-end;
     
 }
 .misc{
@@ -25,7 +26,7 @@ button{
 .keypad{
     
     flex-direction:row;
-    border: 10px brown solid;
+    border: brown solid
     
 }
 .key{
@@ -34,7 +35,7 @@ button{
 }
 .left{
     flex-direction: column;
-    border: 10px pink solid;
+    border: pink solid;
 }
 .left .middle{
     flex-direction: column;
@@ -43,5 +44,5 @@ button{
 }
 .right{
     flex-direction: column;
-    border: 10px magenta solid;
+    border: magenta solid;
 }

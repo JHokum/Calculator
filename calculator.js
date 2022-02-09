@@ -12,7 +12,10 @@ function operate(operator, num1, num2){
 }
 
 const buttons = Array.from(document.querySelectorAll("button"));
-buttons.forEach(button=>button.addEventListener("click",(e)=>console.log(e.target.textContent)))
+buttons.forEach(button=>button.addEventListener("click",(e)=>display.textContent+=e.target.textContent))
+
+const display = document.querySelector(".display");
+
 
 //html population ----------------------------------------------
 // const body = document.querySelector("body")
