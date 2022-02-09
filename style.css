@@ -1,6 +1,9 @@
 body *{
     display: flex;
 }
+button{
+    background-color: pink;
+}
 
 .calculator{
     

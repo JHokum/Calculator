@@ -11,6 +11,9 @@ function operate(operator, num1, num2){
         //case divide
 }
 
+const buttons = Array.from(document.querySelectorAll("button"));
+buttons.forEach(button=>button.addEventListener("click",(e)=>console.log(e.target.textContent)))
+
 //html population ----------------------------------------------
 // const body = document.querySelector("body")
 
