@@ -1,3 +1,4 @@
+
 body *{
     display: flex;
 }
@@ -9,6 +10,9 @@ button{
     
     flex-direction: column;
     border: 10px red solid;
+    width:fit-content;
+    height:auto;
+    
 }
 .display{
     background-color: #EDD2F3;
@@ -31,6 +35,11 @@ button{
 .left{
     flex-direction: column;
     border: 10px pink solid;
+}
+.left .middle{
+    flex-direction: column;
+    
+    
 }
 .right{
     flex-direction: column;
