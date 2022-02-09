@@ -11,8 +11,16 @@ function operate(operator, num1, num2){
         //case divide
 }
 
-//html population
+//html population ----------------------------------------------
 const body = document.querySelector("body")
+
+
+const createContainer = function(className){
+    const container = document.createElement("div")
+    container.classList.add(className)
+    return container
+}
+
 
 const appendContainerToTarget = function(container,target){
     target.appendChild(container);
@@ -31,10 +39,6 @@ const numOneToNineContainer = function(){
     return OneToNine
 }
 
-const createContainer = function(className){
-    const container = document.createElement("div")
-    container.classList.add(className)
-    return container
-}
+
 
 appendContainerToTarget(calculatorContainer(),body);
