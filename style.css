@@ -12,6 +12,7 @@ button{
     border: 10px red solid;
     width:fit-content;
     height:auto;
+    border-image: linear-gradient(turquoise, rgba(248, 30, 237, 0.61)) 27;
     
 }
 .display{
@@ -28,7 +29,8 @@ button{
 .keypad{
     
     flex-direction:row;
-    border: brown solid
+    border: brown solid;
+    border-image: linear-gradient(rgb(165, 147, 147), rgb(139, 139, 248))28;
     
 }
 .key{
