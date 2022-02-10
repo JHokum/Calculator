@@ -105,6 +105,7 @@ const addListeners = function(buttons){
         }
         else if(button.classList.contains("equals")){
             button.addEventListener("click",()=>changeDisplay(equalsFunc(operator, num1, num2)))
+            button.addEventListener("click",()=>num1=+(displayBig.textContent))
         }
         else if(button.classList.contains("clear")){
             button.addEventListener("click",()=>clearAll(0))
