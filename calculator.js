@@ -42,16 +42,16 @@ const equalsFunc = (operation, number1, number2)=>{
     switch(operation){
         case("divide"):
             
-            return number1/number2;
+            return divide(number1,number2);
         case("multiply"):
             
-            return number1*number2;
+            return multiply(number1, number2);
         case("add"):
             
-            return number1+number2;
+            return add(number1, number2);
         case("subtract"):
             
-            return number1-number2;
+            return subtract(number1, number2);
     }
     
 }
@@ -69,13 +69,15 @@ const swapDisplay = function(){
 
 //number key function
 const numFunc = function(str){
-    number = +str;
-    if (num1==0){
-        num1=number;
+    number = str;
+    if (num1==0||operator==""){
+        num1+=number;
+        num1 = +num1;
         changeDisplay(str);
     }
     else{
-        num2=number;
+        num2+=number;
+        num2 = +num2;
         changeDisplay(str);
     }
 }
