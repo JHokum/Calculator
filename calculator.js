@@ -83,6 +83,11 @@ const numFunc = function(str){
 }
 //operator function
 const opFunc = function(event){
+    if(operator!=""){
+        let hold = equalsFunc(operator,num1,num2);
+        changeDisplay(hold);
+        num1=+hold;
+    }
     changeDisplay(targetContent(event));
     operator=targetData(event);
     
