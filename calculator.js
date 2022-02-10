@@ -16,22 +16,29 @@ const equals = document.querySelector(".equals");
 
 
 //clearfunctionality
-const clearDisplay = ()=>{
-    displayBig.textContent="";
+const clearDisplay = (num)=>{
+    if(num==1){
+        displayBig.textContent="";
+    }
+    if (num==0){
+        displayBig.textContent="";
+        displayMini.textContent="";
+    }
+    
 }
 const clearGlobals = ()=>{
     num1=0;
     num2=0;
     operator=0;
 }
-const clearAll = ()=>{
-    clearDisplay();
+const clearAll = (num)=>{
+    clearDisplay(num);
     clearGlobals();
 }
 //equals functionality
 const equalsFunc = (operation, number1, number2)=>{
     swapDisplay();
-    clearAll();
+    clearAll(1);
     switch(operation){
         case("divide"):
             
@@ -100,7 +107,7 @@ const addListeners = function(buttons){
             button.addEventListener("click",()=>changeDisplay(equalsFunc(operator, num1, num2)))
         }
         else if(button.classList.contains("clear")){
-            button.addEventListener("click",()=>clearDisplay())
+            button.addEventListener("click",()=>clearAll(0))
         }   
         })
 }
