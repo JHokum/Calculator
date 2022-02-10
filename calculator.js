@@ -8,7 +8,8 @@ const divide = (num1, num2) => num1/num2
 let num1 =0;
 let num2=0;
 let operator="";
-const display = document.querySelector(".display");
+const displayMini = document.querySelector(".display.mini");
+const displayBig = document.querySelector(".display.big")
 const buttons = Array.from(document.querySelectorAll("button"));
 const equals = document.querySelector(".equals");
 
@@ -16,7 +17,7 @@ const equals = document.querySelector(".equals");
 
 //clearfunctionality
 const clearDisplay = ()=>{
-    display.textContent="";
+    displayBig.textContent="";
 }
 const clearGlobals = ()=>{
     num1=0;
@@ -29,6 +30,7 @@ const clearAll = ()=>{
 }
 //equals functionality
 const equalsFunc = (operation, number1, number2)=>{
+    swapDisplay();
     clearAll();
     switch(operation){
         case("divide"):
@@ -51,7 +53,11 @@ const equalsFunc = (operation, number1, number2)=>{
 
 // Change Display
 const changeDisplay = function(str){
-    display.textContent+=str;
+    // display.textContent+=str;
+    displayBig.textContent+=str;
+}
+const swapDisplay = function(){
+    displayMini.textContent=displayBig.textContent;
 }
 
 //number key function
