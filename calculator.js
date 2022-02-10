@@ -8,17 +8,12 @@ const divide = (num1, num2) => num1/num2
 let num1 = 0;
 let num2 = 0;
 let operator="";
-function operate(operator, num1, num2){
-    //switch
-        //case add
-        //case subtract
-        //case multiply
-        //case divide
-}
-
+const display = document.querySelector(".display");
 const buttons = Array.from(document.querySelectorAll("button"));
-// buttons.forEach(button=>button.addEventListener("click",(e)=>display.textContent+=e.target.textContent))
 const equals = document.querySelector(".equals");
+
+
+
 //clearfunctionality
 const clearDisplay = ()=>{
     display.textContent="";
@@ -28,12 +23,16 @@ const equalsFunc = (operator, num1, num2)=>{
     
     switch(operator){
         case("divide"):
+            clearDisplay();
             return num1/num2;
         case("multiply"):
+            clearDisplay();
             return num1*num2;
         case("add"):
+            clearDisplay();
             return num1+num2;
         case("subtract"):
+            clearDisplay();
             return num1-num2;
     }
 }
@@ -74,7 +73,8 @@ const targetContent = function(event){
 const targetData = function(event){
     return event.target.dataset.operation;
 }
-//buttons
+//-------------------------
+//Button Event Listeners - numbers, operators, equals
 const addListeners = function(buttons){
     buttons.forEach(function(button){
         if (button.classList.contains("num")){
@@ -84,46 +84,12 @@ const addListeners = function(buttons){
             button.addEventListener("click",e=>opFunc(e))
         }
         else if(button.classList.contains("equals")){
-            button.addEventListener("click",()=>changeDisplay(equalsFunc))
+            button.addEventListener("click",()=>changeDisplay(equalsFunc(operator, num1, num2)))
+        }
+        else if(button.classList.contains("clear")){
+            button.addEventListener("click",()=>clearDisplay())
         }   
         })
 }
 addListeners(buttons);
 
-const display = document.querySelector(".display");
-
-
-//html population ----------------------------------------------
-// const body = document.querySelector("body")
-
-
-// const createContainer = function(className){
-//     const container = document.createElement("div")
-//     container.classList.add(className)
-//     return container
-// }
-
-
-// const appendContainerToTarget = function(container,target){
-//     target.appendChild(container);
-// }
-
-// const calculatorContainer=function(){
-//     const str = "calculator"
-//     const calculator = createContainer(str)
-//      appendContainerToTarget(numOneToNineContainer(),calculator)
-//     return calculator
-// }
-
-// const numOneToNineContainer = function(){
-//     const str = "OneToNine";
-//     const OneToNine = createContainer(str)
-//     //populate OneToNine with numbers
-//     return OneToNine
-// }
-
-// const oneToNineNums
-
-
-
-// appendContainerToTarget(calculatorContainer(),body);
