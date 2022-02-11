@@ -8,6 +8,8 @@ const divide = (num1, num2) => rounding(num1/num2)
 let num1 =0;
 let num2=0;
 let operator="";
+let isDecimal=false;
+let decimal = "";
 const displayMini = document.querySelector(".display.mini");
 const displayBig = document.querySelector(".display.big")
 const buttons = Array.from(document.querySelectorAll("button"));
@@ -77,11 +79,13 @@ const swapDisplay = function(){
 const numFunc = function(str){
     number = str;
     if (num1==0||operator==""){
+        num1+=decimal;
         num1+=number;
         num1 = +num1;
         changeDisplay(str);
     }
     else{
+        num2+=decimal;
         num2+=number;
         num2 = +num2;
         changeDisplay(str);
@@ -89,6 +93,8 @@ const numFunc = function(str){
 }
 //operator function
 const opFunc = function(event){
+    isDecimal=false;
+    decimal="";
     if(operator!=""){
         let hold = equalsFunc(operator,num1,num2);
         changeDisplay(hold);
@@ -98,7 +104,14 @@ const opFunc = function(event){
     operator=targetData(event);
     
 }
-
+//decimal function
+const decimalFunc = function(){
+    if (!isDecimal){
+        isDecimal=true;
+        decimal=".";
+        changeDisplay(".");
+    }
+}
 //targeting helper functions
 const targetContent = function(event){
     return event.target.textContent;
@@ -122,6 +135,9 @@ const addListeners = function(buttons){
         }
         else if(button.classList.contains("clear")){
             button.addEventListener("click",()=>clearAll(0))
+        }
+        else if(button.classList.contains("decimal")){
+            button.addEventListener("click",()=>decimalFunc())
         }   
         })
 }
