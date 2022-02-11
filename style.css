@@ -32,7 +32,7 @@ button{
     
     flex-direction:row;
     border: brown solid;
-    border-image: linear-gradient(rgb(165, 147, 147), rgb(139, 139, 248))28;
+    border-image: linear-gradient(rgb(190, 74, 243), rgb(248, 139, 221))28;
     
 }
 .key{
@@ -44,7 +44,7 @@ button{
 }
 .left{
     flex-direction: column;
-    border: pink solid;
+    /* border: pink solid; */
 }
 .left .middle{
     flex-direction: column;
@@ -53,6 +53,6 @@ button{
 }
 .right{
     flex-direction: column;
-    border: magenta solid;
+    /* border: magenta solid; */
     
 }
