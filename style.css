@@ -39,6 +39,9 @@ button{
     /*drop shadow?*/
     
 }
+.operator{
+    
+}
 .left{
     flex-direction: column;
     border: pink solid;
@@ -51,4 +54,5 @@ button{
 .right{
     flex-direction: column;
     border: magenta solid;
+    
 }
